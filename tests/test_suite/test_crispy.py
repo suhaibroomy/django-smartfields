@@ -16,12 +16,12 @@ class CripsyTestCase(TestCase):
 
     def test_text_field(self):
         form = TextTestingForm()
-        self.assertEqual(len(self.render_form(form)), 365)
+        self.assertTrue(365 <= len(self.render_form(form)) <= 374)
 
     def test_image_field(self):
         form = ImageTestingForm()
-        self.assertEqual(len(self.render_form(form)), 1009)
+        self.assertTrue(1009 <= len(self.render_form(form)) <= 1018)
 
     def test_video_field(self):
         form = VideoTestingForm()
-        self.assertEqual(len(self.render_form(form)), 954)
+        self.assertTrue(954 <= len(self.render_form(form)) <= 963)
