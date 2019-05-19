@@ -1,7 +1,11 @@
 import os, time, json
 from django.test import Client
-from django.core.urlresolvers import reverse
 from django.utils.encoding import force_text
+
+try:
+    from django.core.urlresolvers import reverse
+except ModuleNotFoundError:
+    from django.urls import reverse
 
 from test_app.models import VideoTesting
 from test_suite.test_files import add_base, FileBaseTestCase
