@@ -2,7 +2,7 @@ from django import forms
 
 try:
     from django.core.urlresolvers import reverse
-except ModuleNotFoundError:
+except ImportError:
     from django.urls import reverse
 
 from crispy_forms.helper import FormHelper
