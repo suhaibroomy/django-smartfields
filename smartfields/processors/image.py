@@ -284,6 +284,12 @@ class ImageProcessor(BaseFileProcessor):
         return image
 
     def process(self, value, scale=None, format=None, **kwargs):
+        if format is None:
+            extension = value.name_base.rsplit('.')[-1].upper()
+            if extension == 'jpg':
+                format = ImageFormat('JPEG')
+            else:
+                format = ImageFormat(extension)
         cur_pos = value.tell()
         value.seek(0)
         stream = six.BytesIO(value.read())
