@@ -286,7 +286,7 @@ class ImageProcessor(BaseFileProcessor):
     def process(self, value, scale=None, format=None, **kwargs):
         if format is None:
             extension = value.name_base.rsplit('.')[-1].upper()
-            if extension == 'jpg':
+            if extension == 'JPG':
                 format = ImageFormat('JPEG')
             else:
                 format = ImageFormat(extension)
